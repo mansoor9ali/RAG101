@@ -42,3 +42,4 @@ docling
 numpy
 ragas
 datasets
+ollama

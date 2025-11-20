@@ -1,0 +1,72 @@
+# ---- Python cache / bytecode ----
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ---- Virtual environments ----
+.env
+.venv
+venv/
+ENV/
+env/
+
+# ---- Distribution / packaging ----
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ---- Logs & runtime artifacts ----
+*.log
+logs/
+
+# ---- IDE / Editor ----
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ---- OS files ----
+.DS_Store
+Thumbs.db
+
+# ---- Jupyter / notebooks ----
+.ipynb_checkpoints/
+
+# ---- Environment / secrets ----
+.env.local
+.env.*.local
+*.env
+!example.env
+
+# ---- Cache / tooling ----
+.mypy_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+.cache/
+
+# ---- Application specific ----
+chat_history.json
+faiss_index/
+
+# If you want to version FAISS index later, remove above line and add pattern exceptions.
+# e.g., !faiss_index/README.md
+
+# ---- Model / large data artifacts ----
+models/**/*.bin
+models/**/*.pt
+models/**/*.ckpt
+models/**/*.safetensors
+
+# ---- Temporary files ----
+*.tmp
+*.temp
+~$*
+
+# ---- PDFs / large docs (keep README.pdf?) ----
+# README.pdf  # Uncomment to ignore if not needed in repo.
+
+# ---- Python tooling configs (kept) ----
+# Keep requirements.txt, settings, etc.
+
