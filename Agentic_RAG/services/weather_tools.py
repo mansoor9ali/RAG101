@@ -3,12 +3,7 @@ Weather query tools
 """
 import logging
 import requests
-import os
-import re
-import json
-from typing import Dict, Any, List, Callable, Optional, Tuple
-
-from config.settings import AMAP_API_KEY
+from typing import Dict, Any, Optional, Tuple
 
 # Configure logging
 logger = logging.getLogger(__name__)
@@ -30,7 +25,8 @@ class WeatherService:
         """
         self.api_key = api_key
         logger.info("Weather service initialized successfully")
-    
+
+
 
     # 2. Get city code
     def get_city_code(self, city_name: str) -> Tuple[Optional[str], Optional[str]]:
@@ -61,7 +57,7 @@ class WeatherService:
         except Exception as e:
             logger.error(f"Error getting city code: {str(e)}")
             return None, None
-    
+
 
     # 3. Query weather information
     def query_weather(self, city: str, extensions: str = "all") -> Dict[str, Any]:
@@ -127,6 +123,7 @@ class WeatherService:
             
 
 
+
     # 4. Format current weather information
     def _format_current_weather(self, weather: Dict[str, Any], city_name: str) -> str:
         return (
@@ -155,6 +152,7 @@ class WeatherService:
             )
             
         return result
+
 
 
 
@@ -188,4 +186,4 @@ class WeatherTools:
         if result["status"] == "success" and "summary" in result:
             return result["summary"]
         else:
-            return f"Failed to get weather information for {city}: {result.get('message', 'Unknown error')}" 
+            return f"Failed to get weather information for {city}: {result.get('message', 'Unknown error')}"

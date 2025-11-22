@@ -47,4 +47,4 @@ def log_execution(func: Callable) -> Callable:
         except Exception as e:
             logger.error(f"{func.__name__} failed: {str(e)}")
             raise
-    return wrapper 
+    return wrapper

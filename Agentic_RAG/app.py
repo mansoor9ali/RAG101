@@ -3,10 +3,9 @@
 # @Description: Main application file
 
 import streamlit as st
-from datetime import datetime
 import logging
 import re
-from config.settings import (
+from Agentic_RAG.config.settings import (
     DEFAULT_MODEL,
     AVAILABLE_MODELS,
     DEFAULT_SIMILARITY_THRESHOLD,
@@ -14,16 +13,16 @@ from config.settings import (
     AVAILABLE_EMBEDDING_MODELS
 )
 # RAGAgent: Agent to handle user input and generate responses, encapsulating model interaction logic.
-from models.agent import RAGAgent
+from Agentic_RAG.models.agent import RAGAgent
 # ChatHistoryManager: Manage chat history
-from utils.chat_history import ChatHistoryManager
+from Agentic_RAG.utils.chat_history import ChatHistoryManager
 # DocumentProcessor: Process user-uploaded documents
-from utils.document_processor import DocumentProcessor
+from Agentic_RAG.utils.document_processor import DocumentProcessor
 # VectorStoreService: Vector database service for document indexing and retrieval
-from services.vector_store import VectorStoreService
+from Agentic_RAG.services.vector_store import VectorStoreService
 # UIComponents: UI components for rendering the interface
-from utils.ui_components import UIComponents
-from utils.decorators import error_handler, log_execution
+from Agentic_RAG.utils.ui_components import UIComponents
+from Agentic_RAG.utils.decorators import error_handler, log_execution
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -183,7 +182,9 @@ class App:
             self.chat_history.add_message("assistant_think", think_content)  # Add reasoning content
         if docs:
             doc_contents = [doc.page_content for doc in docs]  # Extract document content
-            self.chat_history.add_message("retrieved_doc", doc_contents)  # Add retrieved documents
+            # Store retrieved documents as a single string entry in history
+            combined_docs = "\n---\n".join(doc_contents)
+            self.chat_history.add_message("retrieved_doc", combined_docs)  # Add retrieved documents
 
 
     # Entry point: run the application

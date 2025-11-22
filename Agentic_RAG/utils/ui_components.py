@@ -9,7 +9,7 @@ import logging
 
 from langchain_core.documents import Document
 
-from document_processor import DocumentProcessor
+from Agentic_RAG.utils.document_processor import DocumentProcessor
 from Agentic_RAG.services.vector_store import VectorStoreService
 
 from Agentic_RAG.config.settings import AVAILABLE_EMBEDDING_MODELS

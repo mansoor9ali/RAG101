@@ -85,7 +85,7 @@ pip install -r requirements.txt
 ## ▶️ Run the App
 Primary run command (as requested):
 ```bash
-streamlit run app.py --server.port 6006
+streamlit run run_agentic_rag.py --server.port 6006
 ```
 Then open: http://localhost:6006
 

@@ -1,7 +1,7 @@
 """
 Agent model class
 """
-from typing import Optional, Dict, Any, List
+from typing import Optional
 from agno.agent import Agent
 from agno.models.ollama import Ollama
 from agno.tools.reasoning import ReasoningTools
@@ -75,7 +75,6 @@ class RAGAgent:
                 ReasoningTools(add_instructions=True),
                 query_weather_function  # Use the Function instance
             ],
-            show_tool_calls=True,
             markdown=True,
         )
             
@@ -99,4 +98,4 @@ class RAGAgent:
         
         # Let the Agent handle the request; it will automatically decide whether to call the weather tool
         response = self.agent.run(full_prompt)
-        return response.content 
+        return response.content

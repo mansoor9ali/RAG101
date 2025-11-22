@@ -5,7 +5,6 @@ import json
 import os
 from typing import List, Dict, Optional
 import pandas as pd
-from datetime import datetime
 from Agentic_RAG.config.settings import HISTORY_FILE, MAX_HISTORY_TURNS
 
 class ChatHistoryManager:
@@ -103,4 +102,4 @@ class ChatHistoryManager:
         return {
             "total_messages": total_messages,
             "user_messages": user_messages
-        } 
+        }

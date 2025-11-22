@@ -6,19 +6,19 @@ import os
 from typing import List, Optional, Dict, Any
 import logging
 from pathlib import Path
-from utils.decorators import error_handler, log_execution
+from Agentic_RAG.utils.decorators import error_handler, log_execution
 
 from langchain_community.vectorstores import FAISS
-from langchain.schema import Document
+from langchain_core.documents import Document
 from langchain_community.embeddings import OllamaEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from config.settings import (
-    EMBEDDING_MODEL, 
-    EMBEDDING_BASE_URL, 
-    MAX_RETRIEVED_DOCS,
-    CHUNK_SIZE,
-    CHUNK_OVERLAP,
-    SEPARATORS
+from Agentic_RAG.config.settings import (
+        EMBEDDING_MODEL,
+        EMBEDDING_BASE_URL,
+        MAX_RETRIEVED_DOCS,
+        CHUNK_SIZE,
+        CHUNK_OVERLAP,
+        SEPARATORS
 )
 
 # Configure logging
