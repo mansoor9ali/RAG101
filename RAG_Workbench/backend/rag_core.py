@@ -165,7 +165,6 @@ def generate_answer(query: str, context_chunks: List[str]) -> str:
             base_url=os.getenv("DEEPSEEK_BASE_URL"),
             model_provider="openai",
             temperature=0.2,
-            max_new_tokens=512
         )
 
         prompt_template = ChatPromptTemplate.from_template(
@@ -266,7 +265,6 @@ def expand_query(original_query: str) -> List[str]:
             base_url=os.getenv("DEEPSEEK_BASE_URL"),
             model_provider="openai",
             temperature=0.5, # Higher temperature for variety
-            max_new_tokens=128
         )
 
         prompt_template = ChatPromptTemplate.from_template(
