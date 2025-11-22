@@ -10,7 +10,7 @@ from Agentic_RAG.utils.decorators import error_handler, log_execution
 
 from langchain_community.vectorstores import FAISS
 from langchain_core.documents import Document
-from langchain_community.embeddings import OllamaEmbeddings
+from langchain_ollama import OllamaEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from Agentic_RAG.config.settings import (
         EMBEDDING_MODEL,
