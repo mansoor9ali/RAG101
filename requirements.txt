@@ -44,3 +44,5 @@ numpy
 ragas
 datasets
 ollama
+fastapi
+uvicorn
